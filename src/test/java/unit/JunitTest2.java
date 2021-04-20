@@ -1,4 +1,4 @@
-package tests;
+package unit;
 
 import ch.qos.logback.classic.Logger;
 import org.junit.jupiter.api.Test;

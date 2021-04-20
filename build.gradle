@@ -26,6 +26,5 @@ dependencies {
 }
 
 test {
-    dependsOn(tasks.clean)
     useJUnitPlatform()
 }
