@@ -28,11 +28,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-task runJunit5Tests(type: Test) {
-    dependsOn(tasks.clean)
-    useJUnitPlatform()
-    filter {
-        includeTestsMatching "tests.*"
-    }
-}
