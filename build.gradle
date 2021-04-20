@@ -11,20 +11,21 @@ repositories {
     mavenCentral()
 }
 
-def junit5_version = '5.7.0'
-def allure_version = '2.13.9'
-def logback_version = '1.2.3'
+def junit5Version = '5.7.0'
+def allureVersion = '2.13.9'
+def logbackVersion = '1.2.3'
 def selenideVersion = '5.20.1'
 
 dependencies {
-    implementation "ch.qos.logback:logback-core:${logback_version}"
+    implementation "ch.qos.logback:logback-core:${logbackVersion}"
     implementation "org.slf4j:slf4j-api:1.7.30"
     implementation "com.codeborne:selenide:${selenideVersion}"
+    implementation "io.qameta.allure:allure-selenide:${allureVersion}"
     testImplementation "junit:junit:4.13.1"
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
-    testImplementation "io.qameta.allure:allure-junit5:${allure_version}"
-    testImplementation "ch.qos.logback:logback-classic:${logback_version}"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit5_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit5Version}"
+    testImplementation "io.qameta.allure:allure-junit5:${allureVersion}"
+    testImplementation "ch.qos.logback:logback-classic:${logbackVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit5Version}"
 }
 
 test {
