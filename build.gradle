@@ -10,28 +10,21 @@ repositories {
     mavenCentral()
 }
 
+def junit5_version = '5.7.0'
+
 dependencies {
     testImplementation 'junit:junit:4.13.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testImplementation 'org.junit.platform:junit-platform-runner:1.7.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit5_version}"
 }
 
 test {
     useJUnitPlatform()
-    useJUnit()
 }
 
 task runJunit5Tests(type: Test) {
     useJUnitPlatform()
     filter {
         includeTestsMatching "testsJunit5.*"
-    }
-}
-
-task runJunit4Tests(type: Test) {
-    useJUnit()
-    filter {
-        includeTestsMatching "testsJunit4.JunitTestSuitePackage"
     }
 }
