@@ -30,6 +30,7 @@ test {
 }
 
 task runJunit5Tests(type: Test) {
+    dependsOn(tasks.clean)
     useJUnitPlatform()
     filter {
         includeTestsMatching "tests.*"
