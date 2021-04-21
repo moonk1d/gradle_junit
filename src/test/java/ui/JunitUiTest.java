@@ -2,19 +2,18 @@ package ui;
 
 import static com.codeborne.selenide.Selenide.open;
 
-import hooks.AllureSelenideHook;
-import hooks.LogWatcher;
+import hooks.UiConfigurationSetupHook;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pages.HomePage;
 import pages.SignInPage;
 
-@ExtendWith({AllureSelenideHook.class, LogWatcher.class})
+@ExtendWith({UiConfigurationSetupHook.class})
 public class JunitUiTest {
 
   @Test
   public void jUnitUiTest1() {
-    HomePage homePage = open("https://grinfer.com", HomePage.class);
+    HomePage homePage = open("", HomePage.class);
     homePage.clickLinkByText("Log In");
     SignInPage signInPage = new SignInPage();
     signInPage.isLoaded();
@@ -22,9 +21,8 @@ public class JunitUiTest {
 
   @Test
   public void jUnitUiFailingTest2() {
-    HomePage homePage = open("https://grinfer.com", HomePage.class);
-    homePage.clickLinkByText("Log In");
-    SignInPage signInPage = new SignInPage();
-    signInPage.clickLinkByText("fail");
+    // expected to fail
+    SignInPage signInPage = open("/sign-in", SignInPage.class);
+    signInPage.clickLinkByText("Log In");
   }
 }

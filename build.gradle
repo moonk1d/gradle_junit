@@ -29,5 +29,9 @@ dependencies {
 }
 
 test {
+    // this is required to read properties that are passed as -Denv=test
+    options {
+        systemProperties(System.getProperties())
+    }
     useJUnitPlatform()
 }

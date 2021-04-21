@@ -63,3 +63,9 @@ gradlew clean test --tests integration.* -i
 ```shell
 gradlew clean test --tests ui.* -i
 ```
+
+#### The environment variable can be passed to the test run
+
+```shell
+gradlew clean test --tests ui.* -i -Denv=prod
+```

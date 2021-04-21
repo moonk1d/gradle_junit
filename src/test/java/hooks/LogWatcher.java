@@ -27,8 +27,8 @@ public class LogWatcher implements BeforeEachCallback, AfterEachCallback {
     Path content = Paths
         .get(String.format("%s/build/logs/%s.log", System.getProperty("user.dir"),
             buildTestCaseName(context)));
-    try (InputStream is = Files.newInputStream(content)) {
-      Allure.addAttachment("log", is);
+    try (InputStream inputStream = Files.newInputStream(content)) {
+      Allure.addAttachment("log", inputStream);
     } catch (IOException e) {
       logger.warn("Log file not found", e);
     }
