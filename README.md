@@ -46,12 +46,6 @@ Build system: Gradle 6 Test runner: jUnit5 Test reports: Allure 2 CI: Jenkins
 gradlew clean test --tests unit.* -i
 ```
 
-### To run unit tests:
-
-```shell
-gradlew clean test --tests unit.* -i
-```
-
 ### To run integration tests:
 
 ```shell
