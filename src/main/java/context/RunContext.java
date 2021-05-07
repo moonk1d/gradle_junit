@@ -3,38 +3,35 @@ package context;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Represents test run context storage which allows to save/get data and share it between test
+ * cases/test classes during test run.
+ * <p>
+ * Example:
+ * <code>RunContext.put("key", 123);<code/>
+ * <code>RunContext.get("key", Integer.class);<code/>
+ */
 public final class RunContext {
-  private static RunContext instance;
+
   private static final Map<String, Object> context = new HashMap<>();
 
   private RunContext() {
   }
 
-  public static RunContext getInstance() {
-    if (instance == null) {
-      instance = new RunContext();
-    }
-
-    return instance;
-  }
-
-  public void clearContext() {
+  public static void clearContext() {
     context.clear();
   }
 
-  public <T> T get(String key, Class<T> objectClass) {
-    Object object;
-    try {
-      object = context.get(key);
-    } catch (NullPointerException e) {
-      // TODO: Add meaningful exception
-      throw new RuntimeException();
+  public static <T> T get(String key, Class<T> objectClass) {
+    Object object = context.get(key);
+    if (object == null) {
+      throw new RuntimeException(String.format("Object with key [%s] not found.", key));
     }
 
     return objectClass.cast(object);
   }
 
-  public <T> void put(String key, T object) {
+  public static <T> void put(String key, T object) {
     context.put(key, object);
   }
 }

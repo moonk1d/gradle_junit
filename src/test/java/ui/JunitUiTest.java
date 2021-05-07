@@ -30,12 +30,12 @@ public class JunitUiTest {
 
   @Test
   public void jUnitUiSaveToContextTest3() {
-    RunContext.getInstance().put("test_context", "test");
+    RunContext.put("test_context", "test");
   }
 
   @Test
   public void jUnitUiReadContextFromTest4() {
-    String savedContext = RunContext.getInstance().get("test_context", String.class);
+    String savedContext = RunContext.get("test_context", String.class);
     Assertions.assertEquals("test", savedContext);
   }
 

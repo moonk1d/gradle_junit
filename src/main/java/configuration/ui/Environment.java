@@ -1,4 +1,4 @@
-package configuration;
+package configuration.ui;
 
 public enum Environment {
     PROD("https://grinfer.com"),

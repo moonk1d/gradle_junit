@@ -1,10 +1,10 @@
 package hooks;
 
-import configuration.ui.AppConfiguration;
+import configuration.api.AppConfiguration;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-public class UiConfigurationSetupHook implements BeforeAllCallback {
+public class ApiConfigurationSetupHook implements BeforeAllCallback {
 
   @Override
   public void beforeAll(ExtensionContext context) {

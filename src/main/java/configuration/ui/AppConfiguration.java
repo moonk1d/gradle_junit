@@ -1,4 +1,4 @@
-package configuration;
+package configuration.ui;
 
 import ch.qos.logback.classic.Logger;
 import com.codeborne.selenide.Configuration;
@@ -43,6 +43,7 @@ public final class AppConfiguration {
         environment = Environment.TEST;
         break;
       default:
+        // TODO: Add default environment
         environment = Environment.PROD;
         break;
     }
