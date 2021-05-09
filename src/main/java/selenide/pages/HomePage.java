@@ -1,5 +1,5 @@
 package selenide.pages;
 
-public class HomePage extends Page {
+public final class HomePage extends Page {
 
 }

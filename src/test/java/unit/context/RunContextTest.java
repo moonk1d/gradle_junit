@@ -4,9 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import context.RunContext;
+import hooks.LogWatcher;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-class RunContextTest {
+@ExtendWith(LogWatcher.class)
+public class RunContextTest {
 
   @Test
   void clearContext() {
@@ -32,7 +35,6 @@ class RunContextTest {
     int actualObject = RunContext.get("key", Integer.class);
 
     // assert
-
     assertEquals(expectedObject, actualObject);
   }
 }

@@ -1,6 +1,6 @@
 package selenide.pages;
 
-public class SignInPage extends Page {
+public final class SignInPage extends Page {
 
     public void isLoaded() {
         super.textIsVisible("Welcome Back");
