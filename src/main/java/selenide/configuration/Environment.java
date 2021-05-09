@@ -1,4 +1,4 @@
-package configuration.ui;
+package selenide.configuration;
 
 public enum Environment {
     PROD("https://grinfer.com"),

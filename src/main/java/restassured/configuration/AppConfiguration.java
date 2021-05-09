@@ -1,7 +1,9 @@
-package configuration.api;
+package restassured.configuration;
 
 import ch.qos.logback.classic.Logger;
 import io.restassured.RestAssured;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import org.slf4j.LoggerFactory;
 
 public final class AppConfiguration {
@@ -22,6 +24,7 @@ public final class AppConfiguration {
     logger.info("Configuring RestAssured");
     RestAssured.baseURI = environment.getUrl();
     RestAssured.basePath = environment.getVersion();
+    RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
   }
 
   private static void setupEnvironment() {

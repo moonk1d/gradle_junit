@@ -7,8 +7,8 @@ import hooks.UiConfigurationSetupHook;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pages.HomePage;
-import pages.SignInPage;
+import selenide.pages.HomePage;
+import selenide.pages.SignInPage;
 
 @ExtendWith({UiConfigurationSetupHook.class})
 public class JunitUiTest {

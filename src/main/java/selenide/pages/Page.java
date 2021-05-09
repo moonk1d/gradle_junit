@@ -1,4 +1,4 @@
-package pages;
+package selenide.pages;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;

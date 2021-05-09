@@ -1,4 +1,4 @@
-package configuration.ui;
+package selenide.configuration;
 
 import ch.qos.logback.classic.Logger;
 import com.codeborne.selenide.Configuration;

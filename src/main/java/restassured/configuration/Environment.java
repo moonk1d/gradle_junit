@@ -1,4 +1,4 @@
-package configuration.api;
+package restassured.configuration;
 
 public enum Environment {
     PROD("https://api1.binance.com", "/api/v2"),

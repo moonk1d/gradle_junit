@@ -1,6 +1,6 @@
 package hooks;
 
-import configuration.ui.AppConfiguration;
+import selenide.configuration.AppConfiguration;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 

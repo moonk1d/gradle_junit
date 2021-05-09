@@ -1,6 +1,6 @@
 package hooks;
 
-import configuration.api.AppConfiguration;
+import restassured.configuration.AppConfiguration;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
