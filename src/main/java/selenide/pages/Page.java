@@ -7,15 +7,19 @@ import org.openqa.selenium.By;
 
 public class Page {
 
+    private final String BUTTON_BY_TEXT = "//span[text()='%s']/ancestor::button";
+    private final String LINK_BY_TEXT = "//a[text()='%s']";
+    private final String H1_BY_TEXT = "//h1[text()='%s']";
+
     public void clickButtonByText(String text) {
-        $(By.xpath(String.format("//span[text()='%s']/ancestor::button", text))).click();
+        $(By.xpath(String.format(BUTTON_BY_TEXT, text))).click();
     }
 
     public void clickLinkByText(String text) {
-        $(By.xpath(String.format("//a[text()='%s']", text))).click();
+        $(By.xpath(String.format(LINK_BY_TEXT, text))).click();
     }
 
     public void textIsVisible(String text) {
-        $(By.xpath(String.format("//h1[text()='%s']", text))).shouldBe(visible);
+        $(By.xpath(String.format(H1_BY_TEXT, text))).shouldBe(visible);
     }
 }
