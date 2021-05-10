@@ -2,15 +2,14 @@ package ui;
 
 import static com.codeborne.selenide.Selenide.open;
 
-import context.RunContext;
+import hooks.LogWatcher;
 import hooks.UiConfigurationSetupHook;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import selenide.pages.HomePage;
 import selenide.pages.SignInPage;
 
-@ExtendWith({UiConfigurationSetupHook.class})
+@ExtendWith({LogWatcher.class, UiConfigurationSetupHook.class})
 public class JunitUiTest {
 
   @Test
@@ -26,17 +25,6 @@ public class JunitUiTest {
     // expected to fail
     SignInPage signInPage = open("/sign-in", SignInPage.class);
     signInPage.clickLinkByText("Log In");
-  }
-
-  @Test
-  public void jUnitUiSaveToContextTest3() {
-    RunContext.put("test_context", "test");
-  }
-
-  @Test
-  public void jUnitUiReadContextFromTest4() {
-    String savedContext = RunContext.get("test_context", String.class);
-    Assertions.assertEquals("test", savedContext);
   }
 
 }
