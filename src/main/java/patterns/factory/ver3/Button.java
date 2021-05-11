@@ -1,4 +1,4 @@
-package factory.ver3;
+package patterns.factory.ver3;
 
 public interface Button {
 

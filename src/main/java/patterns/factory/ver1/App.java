@@ -1,9 +1,9 @@
-package factory.ver1;
+package patterns.factory.ver1;
 
-import factory.ver2.HomePage;
-import factory.ver2.LoginPage;
-import factory.ver2.Page;
-import factory.ver2.PageFactory;
+import patterns.factory.ver2.HomePage;
+import patterns.factory.ver2.LoginPage;
+import patterns.factory.ver2.Page;
+import patterns.factory.ver2.PageFactory;
 
 public class App {
 

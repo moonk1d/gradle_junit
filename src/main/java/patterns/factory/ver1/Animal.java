@@ -1,4 +1,4 @@
-package factory.ver1;
+package patterns.factory.ver1;
 
 public abstract class Animal {
 

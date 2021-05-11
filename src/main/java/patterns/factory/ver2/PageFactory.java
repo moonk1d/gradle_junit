@@ -1,4 +1,4 @@
-package factory.ver2;
+package patterns.factory.ver2;
 
 public final class PageFactory {
 
