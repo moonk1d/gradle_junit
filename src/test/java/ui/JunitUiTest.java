@@ -6,8 +6,8 @@ import hooks.LogWatcher;
 import hooks.UiConfigurationSetupHook;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import selenide.pages.HomePage;
-import selenide.pages.SignInPage;
+import pages.HomePage;
+import pages.SignInPage;
 
 @ExtendWith({LogWatcher.class, UiConfigurationSetupHook.class})
 public class JunitUiTest {
